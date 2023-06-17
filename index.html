@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<style>
 		.slide-in {
 			opacity: 0;
@@ -227,7 +227,25 @@
 			</div>
 		</footer>
 		
-
+		<style>
+			/* Gaya yang sama seperti sebelumnya */
+	
+			/* Media queries untuk ukuran layar yang lebih kecil (mobile) */
+			@media (max-width: 767px) {
+				/* Gaya yang diterapkan pada ukuran layar < 767px */
+				.slide-in {
+					transform: none;
+					opacity: 1;
+				}
+	
+				.fade-in {
+					opacity: 1;
+				}
+	
+				/* Penyesuaian lain yang diperlukan untuk responsif di perangkat mobile */
+				/* Misalnya, mengatur ukuran font, padding, atau layout lainnya */
+			}
+		</style>
 	<script>
 		function handleScroll() {
 			var sections = document.getElementsByClassName('slide-in');
