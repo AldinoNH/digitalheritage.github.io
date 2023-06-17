@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UAS Digital Heritage</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.slide-in {
+			opacity: 0;
+			transform: translateX(-100%);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+
+		.slide-in.active {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		.fade-in {
+			opacity: 0;
+			animation-name: fade-in-animation;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fade-in-animation {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+
+		.fade-in-heading {
+			opacity: 0;
+			animation-name: fade-in;
+			animation-duration: 4s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fade-in {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+
+		.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		}
+
+		.navbar-solid {
+		background-color: #f8f9fa !important;
+		}
+
+		.navbar-transparent {
+		background-color: transparent !important;
+		}
+
+		.navbar-light .navbar-nav .nav-link:hover {
+		color: #eeb862;
+		}
+
+		.navbar-light .navbar-nav .nav-link.active {
+		border-bottom: 2px solid #eeb862;
+		}
+
+		.jumbotron {
+			margin-top: 80px;
+		}
+
+		body {
+			background-image: url('bg.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.9; /* Atur opacity  */
+		}
+
+		.content {
+			background-color: rgba(255, 255, 255, 0.8); /* Atur nilai opacity (0-1) dan warna latar belakang  */
+			padding: 20px;
+			padding-bottom: 50px;
+		}
+
+		.wrap p {
+			border-radius: 10px;
+			background-color: #f8f9fa;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+
+		.wrap p {
+			font-size: 16px;
+			color: #666;
+			line-height: 1.5;
+		}
+
+		.fade-in-heading {
+			font-family: 'Lobster', cursive; /* Menggunakan font 'Lobster' atau font cursive lainnya */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan teks */
+		}
+
+		h5.navigasi {
+			font-family: "Arial", sans-serif; /* Ganti dengan font  */
+			font-size: 20px; /* Atur ukuran font  */
+			font-weight: bold; /* Atur ketebalan font  */
+			color: #333; /* Atur warna font  */
+			text-decoration: none; /* Menghapus garis bawah pada teks */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek shadow */
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-solid">
+			<div class="container">
+			  <a class="navbar-brand" href="#"><img src="Icon.png" alt="logo"></a>
+			  <h5 class="navigasi">Desa Adat Osing Kemiren</h5>
+		
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+		
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="desawisata.html">Object Wisata</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="festival.html">Festival</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="paketwisata.html">Paket Wisata</a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+		  
+		<div class="jumbotron fade-in">
+			<div class="kotak2 d-flex justify-content-center align-items-center">
+				<div>
+					<h5 class="text-center">Objek Wisata di</h5>
+					<h1 class="text-center">Osing Kemiren</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="content">
+		<h3 class="mt-5 mb-5 text-center fade-in-heading">Tentang Wisata</h3>
+		<audio id="myAudio" loop>
+			<source src="{{ asset('umbul-umbulblambangan.mp3') }}" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+			
+			<section class="about pos mt-5 slide-in">
+				<div class="container">
+					<div class="row">
+						
+						<div class="col-lg-6">
+							<img src="gambar_objekwisata/gambar_1.jpg" alt="">
+						</div>
+						<div class="col-lg-6 d-flex align-items-center slide-in">
+							<div class="wrap ms-5">
+								<div>
+									<h1>Objek Wisata Guning Ijen</h1>
+								</div>
+								<p>
+									Gunung Ijen adalah sebuah gunung berapi yang terletak di perbatasan Kabupaten Banyuwangi dan Kabupaten Bondowoso, Jawa Timur, Indonesia. Gunung ini memiliki ketinggian 2.386 mdpl. Gunung Ijen terakhir meletus pada tahun 1999. Gunung ini menjadi salah satu tempat wisata bagi orang-orang yang menyukai pemandangan pegunungan yang indah. Rata-rata pengunjungnya adalah para pendaki dan turismancanegara yang penasaran akan belerang yang ada di ijen. Gunung ijen juga termasuk labang kota banyuwangi penghasil belerang terbesar. Bukan hanya itu tapi ijen juga menyuguhkan pemandangan yang menakjubkan yaitu danau yang terdapat pada kawah gunung dan memiliki warna yang cantik.
+								</p>
+							</div>
+						</div>
+						
+						<div class="col-lg-6 d-flex align-items-center slide-in">
+							<div class="wrap ms-5">
+								<div>
+									<h1>Taman Nasional Alas Purwo</h1>
+								</div>
+								<p>
+									Taman Nasional Alas purwo diyakini merupakan hutan pertama atau hutan tertua. Banyak yang berasumsi bahwa hutan ini memiliki hawa magis yang kuat hingga banyak oknum yang meyakini ilmu hitam melakukan persembahan atau kegiatan ilmu hitam lainya di alas purwo. Alas purwo ditempati hewan-hewan liar yang dulunya memang sudah ada dan tinggal dihutan tersebut hingga saat ini masih terjaga. Memiliki padang rumput yang luas dan pepohonan yang rindang. Pemandangan yang asri membuat alas purwo sering didatangi pengunjung mau itu turis local maupun luar negri. Alas purwo menjadi salah satu destinasi wisata yang popular di Banyuwangi.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-6 slide-in">
+							<img src="gambar_objekwisata/gambar_2.jpg" alt="">
+						</div>
+						
+						<div class="col-lg-6 slide-in">
+							<img src="gambar_objekwisata/gambar_3.jpg" alt="">
+						</div>
+						<div class="col-lg-6 d-flex align-items-center slide-in">
+							<div class="wrap ms-5">
+								<div>
+									<h1>Taman Gandrung</h1>
+								</div>
+								<p>
+									Taman Gandrung Terakota adalah tempat wisata yang sering dikunjungi wisatawan yang ingin melihat tari tradisional khas banyuwangi khususnya tari gandrung yang menjadi icon kota banyuwangi. Wisata ini dipenuhi dengan patung gandrung yang terbuat dari tembikar tanah yang mudah pecah sehingga pengunjung yang ingin berfoto disarankan untuk berhati-hati agar tidak merusak patung yang ada. Terdapat tempat pementasan yang akan menampilkan tarian dan gamelan khas banyuwangi yang dimainkan disaat tertentu saja. Tempat ini menjadi salah satu destinasi wisata yang popular.
+								</p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			
+
+	</main>
+
+	<footer class="bg-dark text-light py-4">
+		<div class="container text-center">
+			<p>&copy; 2023 Digital Heritage Kelas G Kelompok 1. All rights reserved.</p>
+		</div>
+	</footer>
+	
+
+	<script>
+		function handleScroll() {
+			var sections = document.getElementsByClassName('slide-in');
+			var windowHeight = window.innerHeight;
+			var jumbotronHeight = document.querySelector('.jumbotron').offsetHeight;
+			var navbar = document.querySelector('.navbar');
+
+			for (var i = 0; i < sections.length; i++) {
+				var section = sections[i];
+				var rect = section.getBoundingClientRect();
+				var slideInAt = rect.top - windowHeight + 200; // Adjust the offset as needed
+
+				if (slideInAt < 0) {
+					section.classList.add('active');
+				} else {
+					section.classList.remove('active');
+				}
+
+				// Toggle the slide-in class based on section index
+				if (i % 2 === 0) {
+					section.classList.add('slide-in-right');
+					section.classList.remove('slide-in-left');
+				} else {
+					section.classList.add('slide-in-left');
+					section.classList.remove('slide-in-right');
+				}
+			}
+
+			if (window.scrollY >= jumbotronHeight) {
+				navbar.classList.remove('navbar-solid');
+				navbar.classList.add('navbar-transparent');
+			} else {
+				navbar.classList.remove('navbar-transparent');
+				navbar.classList.add('navbar-solid');
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', handleScroll); // Handle window resize event
+		handleScroll(); // Call the function initially to check for visible sections
+	</script>
+	<script>
+		var audio = document.getElementById("myAudio");
+
+		audio.onended = function() {
+			audio.currentTime = 0;
+			audio.play();
+		};
+
+		audio.play();
+
+		// Get the current page URL
+		var currentPage = window.location.href;
+
+		// Get all navigation links
+		var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+		// Loop through each navigation link and add the "active" class to the current page link
+		for (var i = 0; i < navLinks.length; i++) {
+		if (navLinks[i].href === currentPage) {
+			navLinks[i].classList.add('active');
+			break; // Exit the loop if the active link is found
+		}
+		}
+	</script>
+
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

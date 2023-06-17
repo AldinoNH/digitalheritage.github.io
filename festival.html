@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UAS Digital Heritage</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+	<style>
+		.slide-in {
+			opacity: 0;
+			transform: translateX(-100%);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+
+		.slide-in.active {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		.fade-in {
+			opacity: 0;
+			animation-name: fade-in-animation;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fade-in-animation {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+
+		.fade-in-heading {
+			opacity: 0;
+			animation-name: fade-in;
+			animation-duration: 4s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fade-in {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+
+		.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		}
+
+		.navbar-solid {
+		background-color: #f8f9fa !important;
+		}
+
+		.navbar-transparent {
+		background-color: transparent !important;
+		}
+
+		.navbar-light .navbar-nav .nav-link:hover {
+		color: #eeb862;
+		}
+
+		.navbar-light .navbar-nav .nav-link.active {
+		border-bottom: 2px solid #eeb862;
+		}
+
+		.jumbotron {
+			margin-top: 80px;
+		}
+
+		.wrap {
+			border-radius: 10px;
+			background-color: #f8f9fa;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.wrap h1 {
+			font-size: 24px;
+			color: #333;
+			margin-bottom: 10px;
+		}
+
+		.wrap p {
+			font-size: 16px;
+			color: #666;
+			line-height: 1.5;
+		}
+
+		body {
+			background-image: url('bg.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.9; /* Atur opacity sesuai  */
+		}
+
+		.content {
+			background-color: rgba(255, 255, 255, 0.8); /* Atur nilai opacity (0-1) dan warna latar belakang  */
+			padding: 20px;
+		}
+
+		.fade-in-heading {
+			font-family: 'Lobster', cursive; /* Menggunakan font 'Lobster' atau font cursive lainnya */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan teks */
+		}
+
+		h5.navigasi {
+			font-family: "Arial", sans-serif; /* Ganti dengan font  */
+			font-size: 20px; /* Atur ukuran font  */
+			font-weight: bold; /* Atur ketebalan font  */
+			color: #333; /* Atur warna font */
+			text-decoration: none; /* Menghapus garis bawah pada teks */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek shadow */
+		}
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-solid">
+			<div class="container">
+			  <a class="navbar-brand" href="#"><img src="Icon.png" alt="logo"></a>
+			  <h5 class="navigasi">Desa Adat Osing Kemiren</h5>
+		
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+		
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="desawisata.html">Object Wisata</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="festival.html">Festival</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="paketwisata.html">Paket Wisata</a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+		  
+		<div class="jumbotron fade-in">
+			<div class="kotak2 d-flex justify-content-center align-items-center">
+				<div>
+					<h5 class="text-center">Selamat Datang di desa</h5>
+					<h1 class="text-center">Osing Kemiren</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="content">
+		<h3 class="mt-5 mb-5 text-center fade-in-heading">Tentang Festival</h3>
+		<audio id="myAudio" loop>
+			<source src="{{ asset('umbul-umbulblambangan.mp3') }}" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		
+		<section class="about pos mt-5 slide-in">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-lg-6">
+						<img src="gambar_festival/gambar_1.jpg" alt="">
+					</div>
+					<div class="col-lg-6 d-flex align-items-center slide-in">
+						<div class="wrap ms-5">
+							<div>
+								<h1> </h1>
+							</div>
+							<p>
+								Tari Gandrung adalah salah satu tarian tradisional yang berasal dari suku Osing di Banyuwangi, Jawa Timur, Indonesia. Tarian ini merupakan bagian penting dari budaya dan adat istiadat suku Osing. Tari Gandrung biasanya dilakukan oleh seorang penari wanita yang disebut "penari gandrung" atau "penari bondres". Penari tersebut mengenakan pakaian adat Osing yang indah dan khas, termasuk kain sikepan atau kain sriti. Tarian ini memiliki gerakan yang dinamis dan energik. Penari Gandrung akan meliuk-liukkan tubuhnya dengan gerakan yang anggun dan ekspresif, seringkali melibatkan gerakan tangan, mata, dan kepala yang khas. Gerakan-gerakan ini menggambarkan kegembiraan, keanggunan, dan semangat dalam budaya Osing. Tarian Gandrung sering kali ditarikan sebagai bagian dari upacara adat, perayaan keagamaan, festival, dan acara budaya lainnya di Banyuwangi. Penampilan tari Gandrung sering diiringi oleh musik tradisional seperti gendang, kempul, dan saron. Selain menjadi hiburan, Tari Gandrung juga memiliki makna budaya yang dalam. Tarian ini melambangkan kebersamaan, kegembiraan, serta simbolisasi dari hubungan antara manusia dan dewa. Masyarakat Osing melestarikan dan mempertahankan tarian ini sebagai bagian integral dari identitas budaya mereka.
+							</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 d-flex align-items-center slide-in">
+						<div class="wrap ms-5">
+							<div>
+								<h1> </h1>
+							</div>
+							<p>
+								Tarian Seblang adalah salah satu tarian tradisional yang berasal dari Banyuwangi, Jawa Timur, Indonesia. Tarian ini merupakan bagian integral dari budaya Osing, suku yang mendiami wilayah Banyuwangi. Tarian Seblang biasanya dilakukan dalam rangkaian upacara adat, perayaan, atau acara budaya tertentu di masyarakat Osing. Tarian ini melibatkan sekelompok penari yang mengenakan kostum dan topeng yang khas. Pada umumnya, para penari Seblang terdiri dari laki-laki yang berperan sebagai perempuan. Mereka mengenakan pakaian adat Osing yang indah dan khas, serta topeng yang mewakili karakter perempuan yang anggun. Topeng tersebut biasanya terbuat dari kayu dan dihias dengan warna-warni yang mencolok. Tarian Seblang ditandai oleh gerakan yang lemah lembut, dengan sentuhan keanggunan dan kehalusan. Para penari meliuk-liukkan tubuh mereka dengan gerakan yang menggambarkan kelembutan dan keluwesan karakter perempuan. Gerakan tarian Seblang juga sering diiringi oleh musik tradisional seperti gamelan atau alat musik perkusi. Selain sebagai hiburan, Tarian Seblang juga memiliki makna budaya yang dalam. Tarian ini dipercaya dapat membawa keberuntungan, keharmonisan, dan keberkahan bagi komunitas dan masyarakat Osing. Seblang Banyuwangi merupakan salah satu warisan budaya yang dijaga dan dilestarikan oleh masyarakat setempat. Pertunjukan Seblang dapat ditemukan dalam berbagai acara adat, festival budaya, atau pertunjukan seni di Banyuwangi dan sekitarnya.
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-6 slide-in">
+						<img src="gambar_festival/gambar_2.jpg" alt="">
+					</div>
+					
+					<div class="col-lg-6 slide-in">
+						<img src="gambar_festival/gambar_3.jpg" alt="">
+					</div>
+					<div class="col-lg-6 d-flex align-items-center slide-in">
+						<div class="wrap ms-5">
+							<div>
+								<h1> </h1>
+							</div>
+							<p>
+								Tumpeng sewu merupakan salah satu tradisi budaya Osing. Tradisi ini diselenggarakan di desa Kemiren, Glagah, Kabupaten Banyuwangi, Provinsi Jawa Timur, Indonesia. Desa Kemiren adalah sebuah desa wisata yang merupakan perkampungan asli suku Osing. Di setiap tahunnya dilaksanakan Festival Tumpeng Sewu di Desa Kemiren, Banyuwangi, Jawa Timur. Bukan hanya sebuah ritual adat, namun festival ini kini menjadi atraksi wisata Banyuwangi yang dihadiri oleh ribuan warga dari berbagai penjuru desa maupun wisatawan. Tumpeng Sewu biasanya digelar seminggu sebelum Idul Adha. Sebelum makan tumpeng sewu warga akan di ajak berdoa agar desanya dijauhkan dari segala bencana, dan sumber penyakit karena ritual tumpeng sewu diyakini merupakan slamatan tolak bala. Setiap rumah warga mengeluarkan minimal satu tumpeng yang diletakkan di depan rumahnya. Karena banyaknya tumpeng yang dihadirkan maka dari sinilah asal muasal nama festival tumpeng sewu yang berarti seribu tumpeng.
+							</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 d-flex align-items-center slide-in">
+						<div class="wrap ms-5">
+							<div>
+								<h1> </h1>
+							</div>
+							<p>
+								TRADISI Kebo Keboan adalah tradisi unik yang berasal dari Banyuwangi, Jawa Timur, Indonesia. Dalam tradisi ini, sekelompok orang mengenakan topeng atau kostum kepala kerbau dan menirukan gerakan-gerakan kerbau dalam sebuah pertunjukan yang menggambarkan kekuatan dan keanggunan binatang tersebut. Pertunjukan Kebo Keboan biasanya dilakukan dalam rangkaian upacara adat, perayaan lokal, atau festival budaya di Banyuwangi. Para peserta yang mengenakan kostum kerbau akan berjalan-jalan di jalanan atau lapangan sambil menampilkan gerakan yang mirip dengan gerakan kerbau, seperti menggoyangkan kepala atau meloncat-loncat. Tradisi Kebo Keboan memiliki makna simbolis dalam budaya Banyuwangi. Kepala kerbau dianggap sebagai lambang kekuatan, kesuburan, dan keberanian dalam tradisi tersebut. Pertunjukan ini juga diyakini dapat membawa keberuntungan dan mencegah kemalangan bagi masyarakat. Selain itu, Kebo Keboan juga menjadi daya tarik pariwisata di Banyuwangi, dengan banyak wisatawan yang tertarik untuk menyaksikan pertunjukan ini saat berkunjung ke daerah tersebut.
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-6 slide-in">
+						<img src="gambar_festival/gambar_4.jpg" alt="">
+					</div>
+					
+					<div class="col-lg-6 slide-in">
+						<img src="gambar_festival/gambar_5.jpg" alt="">
+					</div>
+					<div class="col-lg-6 d-flex align-items-center slide-in">
+						<div class="wrap ms-5">
+							<div>
+								<h1> </h1>
+							</div>
+							<p>
+								Banyuwangi Ethno Carnival. Banyuwangi Ethno Carnival adalah acara budaya yang diadakan di Banyuwangi, Jawa Timur, Indonesia. Ini adalah festival tahunan yang menggabungkan elemen budaya lokal, seni, tari, kostum, dan musik dalam sebuah parade besar yang menarik wisatawan dan pengunjung dari dalam dan luar negeri. Banyuwangi Ethno Carnival menampilkan peserta yang mengenakan kostum yang mencerminkan kekayaan budaya dan tradisi Banyuwangi. Kostum-kostum ini biasanya terinspirasi oleh budaya Osing, seperti tarian Gandrung atau keindahan alam Banyuwangi. Parade ini diiringi oleh tarian tradisional, musik, dan atraksi lainnya. Selain menjadi ajang hiburan, Banyuwangi Ethno Carnival juga bertujuan untuk mempromosikan keindahan dan kekayaan budaya Banyuwangi kepada dunia. Festival ini menyoroti warisan budaya lokal dan menggabungkannya dengan nuansa modern dalam sebuah perayaan yang meriah
+							</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		
+
+	</main>
+
+	<footer class="bg-dark text-light py-4">
+		<div class="container text-center">
+			<p>&copy; 2023 Digital Heritage Kelas G Kelompok 1. All rights reserved.</p>
+		</div>
+	</footer>
+	
+
+	<script>
+		function handleScroll() {
+			var sections = document.getElementsByClassName('slide-in');
+			var windowHeight = window.innerHeight;
+			var jumbotronHeight = document.querySelector('.jumbotron').offsetHeight;
+			var navbar = document.querySelector('.navbar');
+
+			for (var i = 0; i < sections.length; i++) {
+				var section = sections[i];
+				var rect = section.getBoundingClientRect();
+				var slideInAt = rect.top - windowHeight + 200; // Adjust the offset as needed
+
+				if (slideInAt < 0) {
+					section.classList.add('active');
+				} else {
+					section.classList.remove('active');
+				}
+
+				// Toggle the slide-in class based on section index
+				if (i % 2 === 0) {
+					section.classList.add('slide-in-right');
+					section.classList.remove('slide-in-left');
+				} else {
+					section.classList.add('slide-in-left');
+					section.classList.remove('slide-in-right');
+				}
+			}
+
+			if (window.scrollY >= jumbotronHeight) {
+				navbar.classList.remove('navbar-solid');
+				navbar.classList.add('navbar-transparent');
+			} else {
+				navbar.classList.remove('navbar-transparent');
+				navbar.classList.add('navbar-solid');
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', handleScroll); // Handle window resize event
+		handleScroll(); // Call the function initially to check for visible sections
+	</script>
+	<script>
+		var audio = document.getElementById("myAudio");
+
+		audio.onended = function() {
+			audio.currentTime = 0;
+			audio.play();
+		};
+
+		audio.play();
+
+		// Get the current page URL
+		var currentPage = window.location.href;
+
+		// Get all navigation links
+		var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+		// Loop through each navigation link and add the "active" class to the current page link
+		for (var i = 0; i < navLinks.length; i++) {
+		if (navLinks[i].href === currentPage) {
+			navLinks[i].classList.add('active');
+			break; // Exit the loop if the active link is found
+		}
+		}
+	</script>
+
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
